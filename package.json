@@ -1,0 +1,39 @@
+{
+  "name": "stocks",
+  "version": "0.0.1",
+  "description": "A simple way to monitor your stocks.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zackurben/stocks"
+  },
+  "keywords": [
+    "stocks",
+    "stock",
+    "portfolio",
+    "stock portfolio",
+    "stock market"
+  ],
+  "author": "Zack Urben <zackurben@gmail.com> (http://zackurben.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zackurben/stocks"
+  },
+  "homepage": "https://github.com/zackurben/stocks",
+  "dependencies": {
+    "cli": "^0.10.0",
+    "debug": "^2.2.0",
+    "lodash": "^3.10.1",
+    "yahoo-finance": "^0.2.12"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
