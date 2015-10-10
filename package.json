@@ -30,6 +30,7 @@
   "dependencies": {
     "cli": "^0.10.0",
     "lodash": "^3.10.1",
+    "term-grid": "^0.1.7",
     "yahoo-finance": "^0.2.12"
   },
   "devDependencies": {
