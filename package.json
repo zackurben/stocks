@@ -29,7 +29,6 @@
   "homepage": "https://github.com/zackurben/stocks",
   "dependencies": {
     "cli": "^0.10.0",
-    "debug": "^2.2.0",
     "lodash": "^3.10.1",
     "yahoo-finance": "^0.2.12"
   },
