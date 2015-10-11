@@ -1,6 +1,6 @@
 {
   "name": "stocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple way to monitor your stocks.",
   "main": "lib/index.js",
   "directories": {
@@ -28,9 +28,10 @@
   },
   "homepage": "https://github.com/zackurben/stocks",
   "dependencies": {
-    "cli": "^0.10.0",
+    "chalk": "^1.1.1",
+    "cli": "https://github.com/zackurben/cli.git",
     "lodash": "^3.10.1",
-    "term-grid": "^0.1.7",
+    "term-grid": "https://github.com/joshschumacher/term-grid.git",
     "yahoo-finance": "^0.2.12"
   },
   "devDependencies": {
