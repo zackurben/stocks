@@ -1,36 +1,6 @@
 {
   "money": {
-    "usd": 15323.00
+    "usd": 0.00
   },
-  "stocks": {
-    "AAPL": {
-      "orders": [
-        {
-          "shares": 100,
-          "price": 100.00,
-          "date": "10/8/2015",
-          "fee": 0
-        },
-        {
-          "shares": 73,
-          "price": 102.13,
-          "date": "10/9/2015",
-          "fee": 0
-        }
-      ],
-      "dividends": {
-        "8/6/2016": 0.52
-      }
-    },
-    "TSLA": {
-      "orders": [
-        {
-          "shares": 69,
-          "price": 222.00,
-          "date": "10/9/2015",
-          "fee": 0
-        }
-      ]
-    }
-  }
+  "stocks": {}
 }
