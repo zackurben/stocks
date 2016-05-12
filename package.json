@@ -1,6 +1,6 @@
 {
   "name": "stocks",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A simple way to monitor your stocks.",
   "main": "lib/index.js",
   "directories": {
