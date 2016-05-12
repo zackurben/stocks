@@ -38,18 +38,23 @@ Options:
   -h, --help             Display help and usage details
 ```
 
-##### View Your Saved Portfolio
-```bash
-$ stocks
-```
-
 ##### Add a Stock to Your Portfolio
 ```bash
 $ stocks -a TSLA,100,249.97,04/20/2016
 ```
 
+##### View Your Saved Portfolio
+```bash
+$ stocks
+  Symbol  Name                     Ask     Bid  Change %  Change $  Shares  G/L $   Total $
+  TSLA    Tesla Motors, Inc.    208.85  208.25      0.13      0.27     100  27.00  20885.00
+
+  Cash                                                                                 0.00
+  Total                                                                     27.00  20885.00
+```
+
 #### Contact
-  - Author : Zack Urben
+  - Author: Zack Urben
+  - Twitter: https://twitter.com/zackurben (better)
   - Contact: zackurben@gmail.com
-  - Twitter: twitter.com/zackurben (better)
 
