@@ -1,13 +1,14 @@
 {
   "name": "stocks",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "A simple way to monitor your stocks.",
-  "main": "lib/index.js",
+  "main": "src/",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "node lib/index.js",
+    "lint": "prettier src/**/*.js --single-quote --write",
+    "start": "node src/",
     "test": "mocha test/test.js"
   },
   "bin": {
@@ -35,11 +36,11 @@
     "cli": "^0.11.0",
     "lodash": "^3.10.1",
     "term-grid": "https://github.com/joshschumacher/term-grid.git",
-    "universal-analytics": "^0.3.9",
     "user-settings-dir": "0.0.3",
-    "yahoo-finance": "^0.2.12"
+    "yahoo-stocks": "^2.0.4"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "jest": "^22.4.3",
+    "prettier": "^1.12.0"
   }
 }
