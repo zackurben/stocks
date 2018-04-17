@@ -11,6 +11,12 @@ const defaults = {
   add: false
 };
 
+process.on('uncaughtException', err => {
+  cli.debug(err.message || err);
+  cli.debug(err.stack || JSON.stringify(err));
+  cli.error(err.message || err);
+});
+
 cli.enable('help', 'version', 'status');
 cli.setApp('stocks', self.version);
 cli.parse({
@@ -23,18 +29,16 @@ cli.parse({
   ]
 });
 cli.main((args, options) => {
+  const tools = require('./tools')(cli, options);
   cli.debug(`args: ${JSON.stringify(args)}`);
   cli.debug(`options: ${JSON.stringify(options)}`);
   cli.debug(`no_color: ${cli.no_color}`);
+  cli.debug(`chalk level: ${tools.chalk}`);
   cli.debug(`version: ${self.version}`);
 
-  const tools = require('./tools')(cli, options);
   if (options.add) {
     return require('./add')(tools, options.add);
   }
 
-  cli.error('No action given!', true);
-  process.on('uncaughtException', err => {
-    tools.error(err.message || err, true);
-  });
+  return require('./display')(tools);
 });

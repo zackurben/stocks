@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const _ = require('lodash');
 const chalk = require('chalk');
 const fs = require('fs');
 const yahoo = require('yahoo-stocks');
@@ -37,12 +36,7 @@ module.exports = (cli, options) => {
       );
     });
 
-  const getSymbol = (symbol = yahoo.lookup(symbol));
-
-  const displayPortfolio = portfolio =>
-    new Promise((resolve, reject) => {
-      const stocks = Object.keys(portfolio.stocks || {});
-    });
+  const getSymbol = symbol => yahoo.lookup(symbol);
 
   /**
    * A simple error handler for logging issues.
@@ -54,9 +48,11 @@ module.exports = (cli, options) => {
    */
   const error = (msg, fatal) => {
     fatal = typeof fatal !== 'boolean' ? false : fatal;
+    cli.debug(err.message || err);
+    cli.debug(err.stack || JSON.stringify(err));
 
     // Show the user the error and potentially exit.
-    cli.error(msg);
+    cli.error(err.message || err);
     if (fatal) {
       return cli.exit();
     }
@@ -68,7 +64,6 @@ module.exports = (cli, options) => {
     getPortfolio,
     savePortfolio,
     getSymbol,
-    displayPortfolio,
     error,
     chalk
   };

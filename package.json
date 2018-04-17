@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "prettier src/**/*.js --single-quote --write",
     "start": "node src/",
+    "debug": "node --inspect-brk src/",
     "test": "mocha test/test.js"
   },
   "bin": {
@@ -34,7 +35,6 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "cli": "^0.11.0",
-    "lodash": "^3.10.1",
     "term-grid": "https://github.com/joshschumacher/term-grid.git",
     "user-settings-dir": "0.0.3",
     "yahoo-stocks": "^2.0.4"
