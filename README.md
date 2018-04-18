@@ -5,17 +5,6 @@ Stocks is a Node CLI tool for tracking your Stock Portfolio.
 All contributions are welcome! This is an open source project under the MIT license, see [LICENSE.md](LICENSE.md) for
 additional information.
 
-### Roadmap
-
- - [x] View a list of stocks
- - [x] Add new stocks via cli tool
- - [x] Add cli help
- - [x] Add external portfolio support
- - [ ] Track dividend reimbursements
- - [ ] Have configurable time periods for change $/%
- - [ ] Interactively manage stocks
- - [ ] Your idea here?
-
 #### Installation
 ```bash
 npm i -g stocks
@@ -23,15 +12,16 @@ npm i -g stocks
 
 #### Usage
 ```bash
-$ stocks -help
+$ stocks --help
 Usage:
   stocks [OPTIONS] [ARGS]
 
 Options:
   -p, --portfolio [FILE] The portfolio location (Default is /<home path>/portfolio.json)
-  -i, --interactive BOOL Interact with stocks
-  -a, --add STRING       Add a stock to the portfolio with a inline csv:
-                         symbol,shares,price[,m/d/y date]
+  -a, --add STRING       Add a stock to the portfolio from CSV string:
+                         symbol,shares,price[,m/d/y purchase date]
+  -r, --research STRING  Research one or multiple stocks without adding them
+                         to the portfolio from CSV string: stock1,stock2
   -k, --no-color         Omit color from output
       --debug            Show debug information
   -v, --version          Display the current version
@@ -46,11 +36,17 @@ $ stocks -a TSLA,100,249.97,04/20/2016
 ##### View Your Saved Portfolio
 ```bash
 $ stocks
-  Symbol  Name                     Ask     Bid  Change %  Change $  Shares  G/L $   Total $
-  TSLA    Tesla Motors, Inc.    208.85  208.25      0.13      0.27     100  27.00  20885.00
+Symbol  Name            Price  Shares      Cost     Value  Daily G/L $  Total G/L $
+TSLA    Tesla, Inc.    293.35     100  24997.00  29335.00      -758.00      4338.00
 
-  Cash                                                                                 0.00
-  Total                                                                     27.00  20885.00
+Total                                  24997.00  29335.00      -758.00      4338.00
+```
+
+##### Research a Stock
+```bash
+$ stocks -r f
+Symbol  Name                  Price  Daily G/L $
+F       Ford Motor Company    11.33        -0.10
 ```
 
 #### Contact
