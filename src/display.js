@@ -65,24 +65,18 @@ module.exports = tools => {
           ]);
         });
 
-        // Add the Money/running total to the data grid.
-        const cash =
-          portfolio.hasOwnProperty('money') &&
-          portfolio.money.hasOwnProperty('usd') &&
-          portfolio.money.usd
-            ? Number(portfolio.money.usd)
-            : 0;
-        output.push(['', '', '', '', '', '', '']);
-        output.push(['Cash', '', '', '', '', '', format(cash)]);
-        output.push([
-          'Total',
-          '',
-          '',
-          '',
-          format(grandCost),
-          format(grandTotal),
-          color(format(grandTotal - grandCost))
-        ]);
+        output.push(
+          ['', '', '', '', '', '', ''],
+          [
+            'Total',
+            '',
+            '',
+            '',
+            format(grandCost),
+            format(grandTotal),
+            color(format(grandTotal - grandCost))
+          ]
+        );
 
         // Build and render the data grid before exiting.
         let grid = new Grid(output);
