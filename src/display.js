@@ -8,7 +8,9 @@ module.exports = tools => {
    *
    * @param num {String|Number}
    *   Convert a value to its number representation with 2 decimal places.
-   * @returns {string}
+   *
+   * @returns {String}
+   *   The formatted number.
    */
   const format = num => Number(num).toFixed(2);
 
@@ -17,26 +19,22 @@ module.exports = tools => {
    *
    * @param num {Number}
    *   The Number to wrap, based upon is +/- value.
-   * @returns {*}
+   *
+   * @returns {String}
+   *   The color formatted number.
    */
   const color = num =>
     num < 0 ? tools.chalk.black.bgRed(num) : tools.chalk.black.bgGreen(num);
-
-  const labels = [
-    'Symbol',
-    'Name',
-    'Price',
-    'Shares',
-    'Cost',
-    'Total $',
-    'G/L $'
-  ].map(label => tools.chalk.underline.bold(label));
 
   tools.getPortfolio().then(portfolio => {
     Promise.all(Object.keys(portfolio.stocks).map(tools.getSymbol))
       .then(data => {
         // Build the data grid for all the stocks in the portfolio.
-        const output = [labels];
+        const output = [
+          ['Symbol', 'Name', 'Price', 'Shares', 'Cost', 'Total $', 'G/L $'].map(
+            label => tools.chalk.underline.bold(label)
+          )
+        ];
         let grandTotal = 0;
         let grandCost = 0;
 

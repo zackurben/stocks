@@ -6,8 +6,14 @@ const fs = require('fs');
 const yahoo = require('yahoo-stocks');
 
 module.exports = (cli, options) => {
+  // Force chalk to use our color settings.
   const chalk = new Chalk.constructor({ enabled: cli.no_color === false });
 
+  /**
+   * Get the user portfolio.
+   *
+   * @returns {Promise}
+   */
   const getPortfolio = () =>
     new Promise(resolve => {
       let portfolio;
@@ -23,6 +29,14 @@ module.exports = (cli, options) => {
       return resolve(portfolio);
     });
 
+  /**
+   * Save the user portfolio.
+   *
+   * @param {Object} portfolio
+   *   The portfolio to save.
+   *
+   * @returns {Promise}
+   */
   const savePortfolio = portfolio =>
     new Promise((resolve, reject) => {
       fs.writeFile(
@@ -38,6 +52,14 @@ module.exports = (cli, options) => {
       );
     });
 
+  /**
+   * Lookup a security by its symbol.
+   *
+   * @param {String} symbol
+   *   The securities exchange symbol.
+   *
+   * @returns {Promise}
+   */
   const getSymbol = symbol => yahoo.lookup(symbol);
 
   /**
