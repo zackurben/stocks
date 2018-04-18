@@ -17,7 +17,7 @@ module.exports = (tools, data) => {
 
   // Load the portfolio and merge the given + existing data together.
   tools.getPortfolio().then(portfolio => {
-    tools.cli.debug(portfolio);
+    tools.cli.debug(JSON.stringify(portfolio));
     portfolio.stocks = portfolio.stocks || {};
 
     symbol = String(symbol).toUpperCase();
@@ -35,7 +35,7 @@ module.exports = (tools, data) => {
       date ? { date } : {}
     );
 
-    tools.cli.debug(temp);
+    tools.cli.debug(JSON.stringify(temp));
     portfolio.stocks[symbol].orders.push(temp);
 
     // Save the portfolio.

@@ -60,7 +60,10 @@ module.exports = (cli, options) => {
    *
    * @returns {Promise}
    */
-  const getSymbol = symbol => yahoo.lookup(symbol);
+  const getSymbol = symbol =>
+    Promise.all([yahoo.lookup(symbol), yahoo.history(symbol)]).then(
+      ([lookup, history]) => Object.assign({}, lookup, history)
+    );
 
   /**
    * A simple error handler for logging issues.
