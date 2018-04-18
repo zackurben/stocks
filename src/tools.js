@@ -85,6 +85,29 @@ module.exports = (cli, options) => {
     }
   };
 
+  /**
+   * Format a number for nice table outputs.
+   *
+   * @param num {String|Number}
+   *   Convert a value to its number representation with 2 decimal places.
+   *
+   * @returns {String}
+   *   The formatted number.
+   */
+  const format = num => Number(num).toFixed(2);
+
+  /**
+   * Wrap the given number in a tools.chalk color
+   *
+   * @param num {Number}
+   *   The Number to wrap, based upon is +/- value.
+   *
+   * @returns {String}
+   *   The color formatted number.
+   */
+  const color = num =>
+    num < 0 ? chalk.black.bgRed(num) : chalk.black.bgGreen(num);
+
   return {
     cli,
     options,
@@ -92,6 +115,8 @@ module.exports = (cli, options) => {
     savePortfolio,
     getSymbol,
     error,
-    chalk
+    chalk,
+    format,
+    color
   };
 };
