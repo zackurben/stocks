@@ -1,9 +1,7 @@
 'use strict';
 
-const Grid = require('term-grid');
-
 module.exports = (tools, stocks) => {
-  const { format, color } = tools;
+  const { format, color, Grid } = tools;
 
   tools.cli.debug(stocks);
   const search = stocks

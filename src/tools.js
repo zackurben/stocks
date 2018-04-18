@@ -4,6 +4,7 @@ const path = require('path');
 const Chalk = require('chalk');
 const fs = require('fs');
 const yahoo = require('yahoo-stocks');
+const Grid = require('term-grid');
 
 module.exports = (cli, options) => {
   // Force chalk to use our color settings.
@@ -117,6 +118,7 @@ module.exports = (cli, options) => {
     error,
     chalk,
     format,
-    color
+    color,
+    Grid
   };
 };

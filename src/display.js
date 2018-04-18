@@ -1,9 +1,7 @@
 'use strict';
 
-const Grid = require('term-grid');
-
 module.exports = tools => {
-  const { format, color } = tools;
+  const { format, color, Grid } = tools;
 
   tools.getPortfolio().then(portfolio => {
     Promise.all(Object.keys(portfolio.stocks).map(tools.getSymbol))
