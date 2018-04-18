@@ -1,11 +1,13 @@
 'use strict';
 
 const path = require('path');
-const chalk = require('chalk');
+const Chalk = require('chalk');
 const fs = require('fs');
 const yahoo = require('yahoo-stocks');
 
 module.exports = (cli, options) => {
+  const chalk = new Chalk.constructor({ enabled: cli.no_color === false });
+
   const getPortfolio = () =>
     new Promise(resolve => {
       let portfolio;

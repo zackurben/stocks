@@ -1,7 +1,6 @@
 'use strict';
 
 const Grid = require('term-grid');
-let grid = null;
 
 module.exports = tools => {
   /**
@@ -88,7 +87,7 @@ module.exports = tools => {
         ]);
 
         // Build and render the data grid before exiting.
-        grid = new Grid(output);
+        let grid = new Grid(output);
         grid.setAlign([
           'left',
           'left',

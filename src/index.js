@@ -33,7 +33,6 @@ cli.main((args, options) => {
   cli.debug(`args: ${JSON.stringify(args)}`);
   cli.debug(`options: ${JSON.stringify(options)}`);
   cli.debug(`no_color: ${cli.no_color}`);
-  cli.debug(`chalk level: ${tools.chalk}`);
   cli.debug(`version: ${self.version}`);
 
   if (options.add) {
